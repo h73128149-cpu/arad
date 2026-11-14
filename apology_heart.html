@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160d24">
+<title>یه حرف از ته دل...</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--pink:#ff6f9f;--rose:#ff3e78;--cream:#fff4f7}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--cream);background:#160d24}
+.scene{position:fixed;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 110%,#64264e 0%,transparent 48%),radial-gradient(ellipse at 10% 15%,#3d245e 0%,transparent 40%),linear-gradient(135deg,#100d20,#24122f 55%,#35172f)}
+.scene:before,.scene:after{content:"";position:absolute;width:55vw;height:55vw;min-width:400px;min-height:400px;border-radius:50%;filter:blur(75px);opacity:.23;animation:drift 16s ease-in-out infinite alternate}
+.scene:before{background:#ff4f89;top:-28%;right:-12%}.scene:after{background:#8b5cff;bottom:-35%;left:-15%;animation-delay:-7s}
+@keyframes drift{to{transform:translate(8vw,7vh) scale(1.18)}}
+.stars{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 15% 20%,#fff9 50%,transparent 60%),radial-gradient(1px 1px at 70% 30%,#fff8 50%,transparent 60%),radial-gradient(2px 2px at 85% 75%,#fff7 50%,transparent 60%),radial-gradient(1px 1px at 35% 82%,#fff9 50%,transparent 60%);background-size:230px 210px;animation:twinkle 5s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:.35;transform:translateY(-8px)}}
+.float{position:absolute;color:#ff9cba;opacity:.22;animation:floatUp 13s linear infinite;user-select:none}
+@keyframes floatUp{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.25}to{transform:translateY(-15vh) rotate(35deg);opacity:0}}
+main{position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{width:min(92vw,540px);padding:clamp(28px,6vw,52px) clamp(22px,5vw,44px);text-align:center;border:1px solid #ffffff26;border-radius:30px;background:linear-gradient(145deg,#ffffff18,#ffffff09);box-shadow:0 25px 90px #05020b80,inset 0 1px #ffffff24;backdrop-filter:blur(18px);position:relative;overflow:hidden;animation:appear 1s cubic-bezier(.2,.8,.2,1) both}
+.card:before{content:"";position:absolute;inset:0 auto auto 15%;width:70%;height:1px;background:linear-gradient(90deg,transparent,#ffd4e3aa,transparent)}
+@keyframes appear{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#ffb6cc;margin-bottom:15px}
+h1{font-size:clamp(23px,5vw,34px);line-height:1.7;margin:0 0 9px;font-weight:800}
+.sub{color:#f4dce7b8;font-size:14px;line-height:2;margin:0 auto 24px;max-width:370px}
+.heart-wrap{height:140px;display:grid;place-items:center;margin:4px 0 15px}
+.heart{width:86px;height:86px;position:relative;transform:rotate(-45deg);background:linear-gradient(135deg,#ff9dbb,#ff3d79);filter:drop-shadow(0 0 22px #ff4e8b88);animation:heartbeat 1.15s ease-in-out infinite}
+.heart:before,.heart:after{content:"";position:absolute;width:86px;height:86px;border-radius:50%;background:inherit}
+.heart:before{top:-43px;left:0}.heart:after{left:43px;top:0}
+@keyframes heartbeat{0%,100%{transform:rotate(-45deg) scale(1)}14%{transform:rotate(-45deg) scale(1.13)}28%{transform:rotate(-45deg) scale(1)}42%{transform:rotate(-45deg) scale(1.09)}}
+.message{font-size:clamp(17px,3.8vw,21px);font-weight:600;line-height:2.15;margin:0 auto 28px;max-width:420px}
+.buttons{display:flex;gap:13px;justify-content:center;align-items:center;min-height:62px;position:relative}
+button{font:700 14px 'Vazirmatn',Tahoma,sans-serif;border:0;border-radius:16px;padding:15px 20px;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,background .2s;white-space:nowrap}
+#yes{color:#47172c;background:linear-gradient(135deg,#ffd0df,#ff80a8);box-shadow:0 9px 26px #ff57934d;flex:1;max-width:250px;position:relative;z-index:2}
+#yes:hover{box-shadow:0 12px 34px #ff57937a;transform:translateY(-2px)}
+#no{color:#f8dce7;background:#ffffff12;border:1px solid #ffffff30;position:relative;z-index:3}
+.hint{font-size:11px;color:#f3ccdb80;margin-top:22px}
+.success{display:none;animation:appear .65s ease both}
+.success .big-heart{font-size:54px;display:block;animation:heartbeat 1.15s infinite}
+.success h2{font-size:25px;margin:12px 0 8px}
+.success p{color:#f4dce7c9;line-height:2;margin:0}
+footer{position:fixed;bottom:16px;left:0;right:0;text-align:center;color:#ffffff50;font-size:10px;z-index:2}
+@media(max-width:420px){.buttons{flex-direction:column}#yes,#no{width:100%;max-width:none}.card{padding:30px 20px}}
+</style>
+</head>
+<body>
+<div class="scene"><div class="stars"></div></div>
+<main>
+<section class="card" aria-live="polite">
+  <div id="content">
+    <div class="eyebrow">یه حرف از ته دل</div>
+    <div class="heart-wrap"><div class="heart" aria-hidden="true"></div></div>
+    <h1>برای تو...</h1>
+    <p class="sub">فقط چند لحظه بهم فرصت بده</p>
+    <p class="message">بابت کار یا حرفایی که باعث شد ازم آزرده بشی، معذرت می‌خوام. واقعاً دلم نمی‌خواست ناراحتت کنم. ❤️</p>
+    <div class="buttons">
+      <button id="yes">می‌بخشم، دیگه تکرار نشه</button>
+      <button id="no">نه، نمی‌بخشم</button>
+    </div>
+    <div class="hint">این حرف، از ته قلبمه ♡</div>
+  </div>
+  <div class="success" id="success">
+    <span class="big-heart">💗</span>
+    <h2>ممنون که بهم فرصت دادی</h2>
+    <p>قول می‌دم بیشتر حواسم به دلت باشه.<br>بخششت برام خیلی ارزشمنده.</p>
+  </div>
+</section>
+</main>
+<footer>با عشق، و از صمیم قلب</footer>
+<script>
+const noBtn=document.getElementById('no');
+const yesBtn=document.getElementById('yes');
+const card=document.querySelector('.card');
+let noScale=1,yesScale=1;
+function dodge(){
+  noScale=Math.max(.28,noScale-.12);
+  yesScale=Math.min(1.65,yesScale+.12);
+  noBtn.style.transform=`scale(${noScale})`;
+  yesBtn.style.transform=`scale(${yesScale})`;
+  noBtn.style.position='fixed';
+  const pad=18;
+  const maxX=Math.max(pad,window.innerWidth-noBtn.offsetWidth*noScale-pad);
+  const maxY=Math.max(pad,window.innerHeight-noBtn.offsetHeight*noScale-pad);
+  noBtn.style.left=(pad+Math.random()*(maxX-pad))+'px';
+  noBtn.style.top=(pad+Math.random()*(maxY-pad))+'px';
+  noBtn.style.opacity=Math.max(.45,noScale);
+}
+noBtn.addEventListener('mouseenter',dodge);
+noBtn.addEventListener('touchstart',e=>{e.preventDefault();dodge()},{passive:false});
+noBtn.addEventListener('click',e=>{e.preventDefault();dodge()});
+function playSoftTune(){
+  try{
+    const Ctx=window.AudioContext||window.webkitAudioContext;
+    const ctx=new Ctx();
+    const notes=[523.25,659.25,783.99,659.25,587.33,698.46,783.99];
+    notes.forEach((freq,i)=>{
+      const osc=ctx.createOscillator(),gain=ctx.createGain();
+      osc.type='sine';osc.frequency.value=freq;
+      gain.gain.setValueAtTime(.0001,ctx.currentTime+i*.34);
+      gain.gain.exponentialRampToValueAtTime(.045,ctx.currentTime+i*.34+.04);
+      gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+i*.34+.29);
+      osc.connect(gain);gain.connect(ctx.destination);
+      osc.start(ctx.currentTime+i*.34);osc.stop(ctx.currentTime+i*.34+.31);
+    });
+    setTimeout(()=>ctx.close(),3200);
+  }catch(e){}
+}
+yesBtn.addEventListener('click',()=>{
+  playSoftTune();
+  document.getElementById('content').style.display='none';
+  document.getElementById('success').style.display='block';
+  document.querySelector('.card').style.borderColor='#ff9dbb66';
+  document.querySelector('.scene').style.background='radial-gradient(ellipse at 50% 110%,#873653 0%,transparent 50%),linear-gradient(135deg,#160d24,#35172f)';
+});
+for(let i=0;i<17;i++){
+ const el=document.createElement('span');el.className='float';el.textContent=['♡','✦','♥','✧'][i%4];
+ el.style.left=Math.random()*100+'%';el.style.animationDelay=(-Math.random()*14)+'s';
+ el.style.animationDuration=(10+Math.random()*10)+'s';el.style.fontSize=(12+Math.random()*22)+'px';
+ document.body.appendChild(el);
+}
+</script>
+</body>
+</html>
